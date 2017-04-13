@@ -1,27 +1,34 @@
 # Get your certificates
+获取证书
 
 To start with, you'll need a certificate issued by [the iOS Provisioning
 Portal](https://developer.apple.com/ios/manage/passtypeids/index.action).  You
 need one certificate per Passbook Type ID.
+首先，您需要一个由iOS配置门户颁发的证书。你每Passbook Type ID需要一个证书.
 
 After adding this certificate to your Keychain, you need to export it as a
 `.p12` file and copy it into the keys directory.
+添加此证书到您的钥匙串后，你需要将它导出为'.P12'文件并将其复制到密钥目录。
 
 You will also need the 'Apple Worldwide Developer Relations Certification
 Authority' certificate and to conver the `.p12` files into `.pem` files.  You
 can do both using the `node-passbook prepare-keys` command:
+你也需要"苹果全球开发者关系认证机构"证书并将'.p12'文件转换成'.pem'文件。你可以使用'node-passbook prepare-keys'命令：
 
 ```sh
 node-passbook prepare-keys -p keys
 ```
 
 This is the same directory into which you placet the `.p12` files.
+和你生成的'.p12'文件在同一个目录下
 
 
 # Start with a template
+从模板开始
 
 Start with a template.  A template has all the common data fields that will be
 shared between your passes, and also defines the keys to use for signing it.
+从模板开始。
 
 ```js
 var createTemplate = require("passbook");
